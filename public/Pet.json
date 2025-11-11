@@ -1,0 +1,98 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.ibb.co.com/4Z0n1rjq/images.jpg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.ibb.co.com/F44cWZYr/winter-grooming-brushing-100.jpg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Kennel Boarding",
+    "providerName": "SnowPaws Lodge",
+    "providerEmail": "bookings@snowpawslodge.com",
+    "price": 50,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Warm, climate-controlled kennels with cozy bedding for pets staying during cold weather.",
+    "image": "https://i.ibb.co.com/bMDXZZwf/images-q-tbn-ANd9-Gc-Q-fw-AJO81-BZH-r8p-ZMa-IGtd3nks-GP3u-Icj-Xoxcrw-Lq-Hl-Bb-Xk-P44he-Lkhog-LWp-Afd.jpg",
+    "category": "Boarding"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Winter Walk & Exercise Sessions",
+    "providerName": "FrostyTails Fitness",
+    "providerEmail": "contact@frostytails.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 8,
+    "description": "Guided outdoor walks with safety gear and paw protection for cold or icy conditions.",
+    "image": "https://i.ibb.co.com/JMkjBSn/person-winter-clothing-walks-along-footage-301100251-iconl.webp",
+    "category": "Exercise"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Nutritional Winter Meal Plan",
+    "providerName": "HealthyPaws Nutrition",
+    "providerEmail": "support@healthypaws.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Personalized high-calorie meal plans to maintain your pet’s energy and warmth during winter.",
+    "image": "https://i.ibb.co.com/x8KtV3p2/images.jpg",
+    "category": "Nutrition"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Winter Cat Cabin Setup",
+    "providerName": "WhiskerWarmth Designs",
+    "providerEmail": "info@whiskerwarmth.com",
+    "price": 60,
+    "rating": 4.8,
+    "slotsAvailable": 2,
+    "description": "Insulated cat cabin installation with heating pad and weatherproof materials for outdoor cats.",
+    "image": "https://i.ibb.co.com/60TY7kCy/download.jpg",
+    "category": "Housing"
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Pet Snow Boot Fitting",
+    "providerName": "PawSteps Boutique",
+    "providerEmail": "orders@pawsteps.com",
+    "price": 18,
+    "rating": 4.7,
+    "slotsAvailable": 7,
+    "description": "Perfectly fitted snow boots to protect your pet’s paws from ice, salt, and frostbite.",
+    "image": "https://i.ibb.co.com/7dtQzfDT/download-1.jpg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Winter Wellness Vet Check",
+    "providerName": "NorthVet Clinic",
+    "providerEmail": "care@northvet.com",
+    "price": 55,
+    "rating": 5.0,
+    "slotsAvailable": 3,
+    "description": "Comprehensive winter health check to ensure pets are protected from seasonal illnesses.",
+    "image": "https://i.ibb.co.com/qYHfVzn9/download-2.jpg",
+    "category": "Health"
+  }
+]
