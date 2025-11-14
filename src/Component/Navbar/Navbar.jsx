@@ -4,22 +4,20 @@ import { IoMdMenu } from "react-icons/io";
 import { HiXMark } from "react-icons/hi2";
 import image from '../../assets/animal-care-pet91179.logowik.com.webp'
 import { AuthContext } from '../provider/AuthContext';
+import { FaUserCircle } from 'react-icons/fa';
 
 
 const Navbar = () => {
     const { user, googleSinOut } = use(AuthContext);
-
     const handleSignOut = () => {
         googleSinOut()
-        .then(result => {
-            console.log(result);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                console.log(result);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
-
-    // console.log(user.displayName)
     const [open, setOpen] = useState(false);
     const links = <>
         <NavLink className={({ isActive }) =>
@@ -40,7 +38,30 @@ const Navbar = () => {
                     <div className="hidden lg:flex items-center space-x-6 text-black">
                         {links}
                     </div>
-                    <NavLink to={'/login'} className="hidden lg:flex btn btn-semibold bg-green-400 px-9 py-6 text-xl border rounded-2xl text-gray-50 hover:text-black hover:bg-green-500"> Login </NavLink>
+                    <div className="hidden lg:flex gap-3">
+                        <div className="relative group">
+                            {user ? (
+                                <Link to={'/myprofile'}><img className="rounded-full w-[45px] h-[45px] object-cover cursor-pointer" src={user.photoURL} alt="profile" /></Link>
+                            ) : ''}
+                            {user && (
+                                <span className="absolute left-1/2 -bottom-10 -translate-x-1/2 bg-gray-800 text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
+                                    {user.displayName}
+                                </span>
+                            )}
+                        </div>
+                        {user ? (
+                            <Link onClick={handleSignOut} className="w-36 btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5 text-xl">
+                                Log Out
+                            </Link>
+                        ) : <>
+                            <Link to="/login" className="w-36 btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5 text-xl" >
+                                Login
+                            </Link>
+                            <Link to="/register" className="w-36 btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5 text-xl" >
+                                Register
+                            </Link>
+                        </>}
+                    </div>
                     <div className="lg:hidden text-black">
                         <button onClick={() => setOpen(!open)}>
                             {open ? <HiXMark size={28} /> : <IoMdMenu size={28} />}
@@ -51,14 +72,30 @@ const Navbar = () => {
                     <div className="lg:hidden text-black bg-white shadow-lg px-6 py-4 space-y-4 flex flex-col text-center">
                         <h1>{user && user.displayName}</h1>
                         {links}
-                        <Link to={'/login'} className="w-full btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5text-xl">{
-                            user ? <>
-                            <img src={user.photoURL} alt="" />
-                            <button onClick={handleSignOut}>Log Out</button>
-                            </> : <>
-                            <button>Login</button>
-                            </>
-                        }</Link>
+                        <div className='flex w-full justify-center items-center gap-2 h-auto'>
+                            <div className="relative group">
+                                {user ? (
+                                    <Link to={'/myprofile'}><img className="rounded-full w-[45px] h-[45px] object-cover cursor-pointer" src={user.photoURL} alt="profile" /></Link>
+                                ) : ''}
+                                {user && (
+                                    <span className="absolute left-1/2 -bottom-10 -translate-x-1/2 bg-gray-800 text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
+                                        {user.displayName}
+                                    </span>
+                                )}
+                            </div>
+                            {user ? (
+                                <Link onClick={handleSignOut} className="w-36 btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5 text-xl" >
+                                    Log Out
+                                </Link>
+                            ) : <>
+                                <Link to="/login" className="w-36 btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5 text-xl" >
+                                    Login
+                                </Link>
+                                <Link to="/register" className="w-36 btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5 text-xl" >
+                                    Register
+                                </Link>
+                            </>}
+                        </div>
                     </div>
                 )}
             </nav>
