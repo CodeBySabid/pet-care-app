@@ -1,12 +1,25 @@
 import React, { use, useState } from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { IoMdMenu } from "react-icons/io";
 import { HiXMark } from "react-icons/hi2";
 import image from '../../assets/animal-care-pet91179.logowik.com.webp'
-import { AuthContext } from '../provider/AuthProvider';
+import { AuthContext } from '../provider/AuthContext';
+
 
 const Navbar = () => {
-    const { user } = use(AuthContext);
+    const { user, googleSinOut } = use(AuthContext);
+
+    const handleSignOut = () => {
+        googleSinOut()
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    // console.log(user.displayName)
     const [open, setOpen] = useState(false);
     const links = <>
         <NavLink className={({ isActive }) =>
@@ -36,9 +49,16 @@ const Navbar = () => {
                 </div>
                 {open && (
                     <div className="lg:hidden text-black bg-white shadow-lg px-6 py-4 space-y-4 flex flex-col text-center">
-                        <h1>{user && user.email}</h1>
+                        <h1>{user && user.displayName}</h1>
                         {links}
-                        <NavLink to={'/login'} className="w-full btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5text-xl">Login</NavLink>
+                        <Link to={'/login'} className="w-full btn font-semibold bg-green-400 text-gray-50 hover:text-black hover:bg-green-500 border rounded-2xl py-1 px-2.5text-xl">{
+                            user ? <>
+                            <img src={user.photoURL} alt="" />
+                            <button onClick={handleSignOut}>Log Out</button>
+                            </> : <>
+                            <button>Login</button>
+                            </>
+                        }</Link>
                     </div>
                 )}
             </nav>
