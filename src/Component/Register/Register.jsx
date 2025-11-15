@@ -1,13 +1,16 @@
-import React, { use, useState } from 'react';
-import { Link } from 'react-router';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { updateProfile } from 'firebase/auth';
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { createUser, signInGoogle } = use(AuthContext);
+    const { createUser, signInGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleSignup = (event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -42,8 +45,17 @@ const Register = () => {
             return toast.error("Password must be at least 6 characters long!");
         }
         createUser(email, password)
-            .then(() => {
-                toast.success("Successfully Register");
+            .then((result) => {
+                const user = result.user;
+                updateProfile(user, {
+                    displayName: name,
+                    photoURL: photoURL
+                })
+                .then(() => {
+                    toast.success("Successfully Register");
+                    navigate(location.state || '/')
+                })
+                .catch
             })
             .catch(error => {
                 if (error.code === "auth/email-already-in-use") {
@@ -57,6 +69,7 @@ const Register = () => {
         signInGoogle()
             .then(() => {
                 toast.success("Successfully Logged In with Google!");
+                navigate(location.state || '/')
             })
             .catch(error => {
                 if (error.code && error.code !== 'auth/popup-closed-by-user') {
@@ -84,11 +97,11 @@ const Register = () => {
                             <input
                                 type={showPassword ? "text" : "password"}
                                 name="password"
-                                className="input w-full pr-10"
+                                className="input pr-10"
                                 placeholder="Password"
                             />
                             <span
-                                className="absolute z-10 right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600"
+                                className="absolute z-10 right-7 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600"
                                 onClick={() => setShowPassword(!showPassword)}
                             >
                                 {showPassword ? (

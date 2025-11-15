@@ -1,22 +1,51 @@
 import React, { use, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
     const { signInUser, signInGoogle } = use(AuthContext);
-    const [ showPassword, setShowPassword ] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleLogin = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
+        if (!email && !password) {
+            toast.error("Please fill in all field!");
+            return;
+        }
+        if (!email) {
+            toast.error("Please fill in the email field!");
+            return;
+        }
+        if (!password) {
+            toast.error("Please fill in the password field!");
+            return;
+        }
         signInUser(email, password)
             .then(() => {
                 toast.success("Successfully LogIn!");
+                navigate(location.state || '/')
             })
             .catch((error) => {
-                toast.error(error.message);
+                if (error.code === "auth/user-not-found") {
+                    toast.error('Email is incorrect!');
+                }
+                else if (error.code === "auth/wrong-password") {
+                    toast.error("Password is incorrect!");
+                }
+                else if (error.code === "auth/invalid-email") {
+                    toast.error("Email format is invalid!");
+                }
+                else if (error.code === "auth/invalid-credential") {
+                    toast.error("Please check your password and email!");
+                }
+                else {
+                    toast.error(error.message);
+                }
             })
     }
 
@@ -24,6 +53,7 @@ const Login = () => {
         signInGoogle()
             .then(() => {
                 toast.success("Successfully Logged In with Google!");
+                navigate(location.state || '/')
             })
             .catch(error => {
                 if (error.code && error.code !== 'auth/popup-closed-by-user') {
@@ -47,11 +77,11 @@ const Login = () => {
                             <input
                                 type={showPassword ? "text" : "password"}
                                 name="password"
-                                className="input w-full pr-10"
+                                className="input pr-0"
                                 placeholder="Password"
                             />
                             <span
-                                className="absolute z-10 right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600"
+                                className="absolute z-10 right-7 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600"
                                 onClick={() => setShowPassword(!showPassword)}
                             >
                                 {showPassword ? (

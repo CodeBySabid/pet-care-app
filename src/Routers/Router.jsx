@@ -6,8 +6,8 @@ import Services from "../Component/Services/Services";
 import MyProfile from "../Component/MyProfile/MyProfile";
 import Register from "../Component/Register/Register";
 import Login from "../Component/Login/Login";
-import BookNow from "../Component/BookNow/BookNow";
 import PetDetails from "../Component/Services/PetDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter(
     [
@@ -21,15 +21,21 @@ const router = createBrowserRouter(
                 },
                 {
                     path: '/services',
-                    Component: Services,
+                    element: <PrivateRoute>
+                        <Services></Services>
+                    </PrivateRoute>,
                 },
                 {
                     path: '/services/:serviceId',
-                    Component: PetDetails,
+                    element: <PrivateRoute>
+                        <PetDetails></PetDetails>
+                    </PrivateRoute>,
                 },
                 {
                     path: '/myprofile',
-                    Component: MyProfile,
+                    element: <PrivateRoute>
+                        <MyProfile></MyProfile>
+                    </PrivateRoute>,
                 },
                 {
                     path: '/login',
@@ -39,10 +45,6 @@ const router = createBrowserRouter(
                     path: '/register',
                     Component: Register,
                 },
-                {
-                    path: '/booknow',
-                    Component: BookNow,
-                }
             ]
         },
 

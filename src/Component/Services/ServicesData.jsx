@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const ServicesData = ({ petcard }) => {
-    const { serviceName, providerName, providerEmail, price, rating, slotsAvailable, description, image, category } = petcard;
+    const { serviceName, providerName, providerEmail, price, rating, slotsAvailable, description, image, category, serviceId } = petcard;
     return (
         <div className="flex justify-center items-center p-4">
             <div className="card w-full max-w-sm bg-base-100 shadow-xl hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 h-full">
@@ -42,12 +43,7 @@ const ServicesData = ({ petcard }) => {
                     </div>
 
                     <div className="card-actions justify-end mt-4">
-                        <a
-                            href={`/booknow`}
-                            className="btn btn-error text-white hover:opacity-90 transition"
-                        >
-                            Book Now
-                        </a>
+                        <Link to={`/services/${serviceId}`} className="btn btn-error text-white hover:opacity-90 transition">Book Now</Link>
                     </div>
                 </div>
             </div>

@@ -9,16 +9,10 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
     const { user, googleSinOut } = use(AuthContext);
+    const [open, setOpen] = useState(false);
     const handleSignOut = () => {
         googleSinOut()
-            .then(result => {
-                console.log(result);
-            })
-            .catch(error => {
-                console.log(error);
-            })
     }
-    const [open, setOpen] = useState(false);
     const links = <>
         <NavLink className={({ isActive }) =>
             isActive ? 'inline-block underline text-blue-600 bg-clip-text font-semibold' : 'text-black'
@@ -70,7 +64,6 @@ const Navbar = () => {
                 </div>
                 {open && (
                     <div className="lg:hidden text-black bg-white shadow-lg px-6 py-4 space-y-4 flex flex-col text-center">
-                        <h1>{user && user.displayName}</h1>
                         {links}
                         <div className='flex w-full justify-center items-center gap-2 h-auto'>
                             <div className="relative group">
