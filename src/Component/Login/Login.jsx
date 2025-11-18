@@ -9,6 +9,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const [email, setEmail] = useState("");
     const handleLogin = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -71,7 +72,13 @@ const Login = () => {
                     <h1 className='text-center text-4xl font-semibold'>Login</h1>
                     <form onSubmit={handleLogin} className="fieldset">
                         <label className="label">Email</label>
-                        <input name='email' type="email" className="input" placeholder="Email" />
+                        <input
+                            name='email'
+                            type="email"
+                            className="input"
+                            placeholder="Email"
+                            onChange = {(e) => setEmail(e.target.value)}
+                            />
                         <label className="label">Password</label>
                         <div className="relative">
                             <input
@@ -91,7 +98,12 @@ const Login = () => {
                                 )}
                             </span>
                         </div>
-                        <div><a className="link link-hover">Forgot password?</a></div>
+                        <Link to={`/Forgot?email=${encodeURIComponent(
+                            document.querySelector("input[name='email']")?.value || ""
+                        )}`}
+                            className="link link-hover">
+                            Forgot password?
+                        </Link>
                         <button className="btn btn-neutral mt-4">Login</button>
                     </form>
                     <h2 className='text-2xl font-semibold text-center py-1'>Or</h2>

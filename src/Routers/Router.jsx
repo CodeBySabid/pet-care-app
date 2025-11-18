@@ -9,6 +9,7 @@ import Login from "../Component/Login/Login";
 import PetDetails from "../Component/Services/PetDetails";
 import PrivateRoute from "./PrivateRoute";
 import EditProfile from "../Component/EditProfile/EditProfile";
+import Forgot from "../Component/Forgot/Forgot";
 
 const router = createBrowserRouter(
     [
@@ -41,6 +42,10 @@ const router = createBrowserRouter(
                 {
                     path: '/login',
                     Component: Login,
+                },
+                {
+                    path: '/forgot',
+                    Component: Forgot,
                 },
                 {
                     path: '/register',

@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 const MyProfile = () => {
     const { user } = use(AuthContext);
-    console.log(user)
     return (
         <div className="w-full my-5 max-sm:w-[98%]  max-w-xl mx-auto rounded-xl overflow-hidden shadow-lg bg-base-200 relative">
             <div className="h-28 border-b-2 border-b-slate-700 bg-[#352f4b]"></div>
