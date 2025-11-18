@@ -3,6 +3,7 @@ import HeroSlider from '../Hero/HeroSlider';
 import AllData from '../Hooks/AllData';
 import HeroCard from '../Hero/HeroCard';
 import WinterCare from '../Hero/WinterCare';
+import ExtraSection from '../ExtraSection/ExtraSection';
 
 const Home = () => {
     const { petdata } = AllData();
@@ -20,6 +21,7 @@ const Home = () => {
                 </div>
             </div>
             <WinterCare></WinterCare>
+            <ExtraSection></ExtraSection>
         </div>
     );
 };

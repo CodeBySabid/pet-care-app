@@ -8,6 +8,7 @@ import Register from "../Component/Register/Register";
 import Login from "../Component/Login/Login";
 import PetDetails from "../Component/Services/PetDetails";
 import PrivateRoute from "./PrivateRoute";
+import EditProfile from "../Component/EditProfile/EditProfile";
 
 const router = createBrowserRouter(
     [

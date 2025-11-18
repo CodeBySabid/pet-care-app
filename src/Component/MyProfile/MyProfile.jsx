@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import { AuthContext } from '../provider/AuthContext';
+import { Link } from 'react-router';
 
 const MyProfile = () => {
     const { user } = use(AuthContext);
@@ -19,9 +20,9 @@ const MyProfile = () => {
                     </div>
 
                 </div>
-                <button className="absolute max-sm:relative max-sm:left-[-7%] max-sm:top-8 top-10 left-[70%] btn btn-primary btn-sm">
+                <Link to={'/editprofile'} className="absolute max-sm:relative max-sm:left-[-7%] max-sm:top-8 top-10 left-[70%] btn btn-primary btn-sm">
                     Edit User Profile
-                </button>
+                </Link>
             </div>
             <div className='rounded-b-2xl h-auto pb-14 max-sm:pt-24 px-12 pt-16 text-white bg-black flex flex-col gap-2'>
                 <div className='text-xl'>
