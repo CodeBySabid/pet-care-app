@@ -40,6 +40,12 @@ const router = createBrowserRouter(
                     </PrivateRoute>,
                 },
                 {
+                    path: '/editprofile',
+                    element: <PrivateRoute>
+                        <EditProfile></EditProfile>
+                    </PrivateRoute>,
+                },
+                {
                     path: '/login',
                     Component: Login,
                 },
