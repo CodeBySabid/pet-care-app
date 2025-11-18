@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AllData from '../Hooks/AllData';
 import { Link, useParams } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const PetDetails = () => {
     const { serviceId } = useParams();
     const { petdata } = AllData()
+    const [showPassword, setShowPassword] = useState('');
     const PateData = petdata.find(p => String(p.serviceId) === serviceId)
     const { serviceName, providerName, providerEmail, price, rating, slotsAvailable, description, image, category } = PateData || {}
     const handleBooknow = (event) => {
@@ -68,7 +70,16 @@ const PetDetails = () => {
                             <label className="label">Email</label>
                             <input name='email' type="email" className="input" placeholder="Email" />
                             <label className="label">Password</label>
-                            <input name='password' type="password" className="input" placeholder="Password" />
+                            <input name="password" type={showPassword ? "text" : "password"} className="input" placeholder="Password" />
+                            <span className='absolute z-10 right-13 top-47.5 -translate-y-1/2 cursor-pointer text-gray-600' 
+                            onClick={() => setShowPassword(!showPassword)}>
+                                {showPassword ? (
+                                    <FaEyeSlash size={20}></FaEyeSlash>
+                                ):(
+                                    <FaEye size={20}></FaEye>
+                                )
+                            }
+                            </span>
                             <button className="btn w-[96%] btn-neutral mt-4">Book Now</button>
                         </form>
                     </div>

@@ -13,7 +13,7 @@ import slide5 from "../../assets/download.jpg";
 const images = [slide1, slide2, slide3, slide4, slide5];
 function HeroSlider() {
   return (
-    <div className="animate__animated animate__fadeInDownBig w-full my-5 mx-auto">
+    <div data-aos="flip-down" className="animate__animated animate__fadeInDownBig w-full my-5 mx-auto">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 2500, disableOnInteraction: false }}

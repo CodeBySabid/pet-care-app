@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const MyProfile = () => {
     const { user } = use(AuthContext);
     return (
-        <div className="w-full my-5 max-sm:w-[98%]  max-w-xl mx-auto rounded-xl overflow-hidden shadow-lg bg-base-200 relative">
+        <div data-aos="fade-down" className="w-full my-5 max-sm:w-[98%]  max-w-xl mx-auto rounded-xl overflow-hidden shadow-lg bg-base-200 relative">
             <div className="h-28 border-b-2 border-b-slate-700 bg-[#352f4b]"></div>
             <div className="w-full bg-transparent p-4 absolute left-7 top-27 max-sm:top-23 flex items-center justify-end ">
                 <div className="relative w-full flex items-center gap-3">
@@ -17,7 +17,6 @@ const MyProfile = () => {
                     <div className="absolute left-19 top-2 max-sm:top-10 max-sm:left-0 text-lg font-semibold">
                         <h2 className='text-white text-2xl'>{user.displayName}</h2>
                     </div>
-
                 </div>
                 <Link to={'/editprofile'} className="absolute max-sm:relative max-sm:left-[-7%] max-sm:top-8 top-10 left-[70%] btn btn-primary btn-sm">
                     Edit User Profile

@@ -7,32 +7,32 @@ import image3 from '../../assets/download (8).jpg'
 const WinterCare = () => {
     return (
         <div className='flex flex-col items-center my-6'>
-            <h1 className="animate__animated animate__fadeInDown text-4xl font-bold text-center mb-9 text-primary">Winter Care Tips for Pets</h1>
+            <h1 data-aos="flip-left" className="animate__animated animate__fadeInDown text-4xl font-bold text-center mb-9 text-primary">Winter Care Tips for Pets</h1>
             <div className='animate__animated animate__fadeInDown flex flex-col gap-2 align-center'>
-                <div className="text-center">
+                <div data-aos="fade-left" className="text-center">
                     <h3 className='text-2xl font-semibold'>Limit outdoor time:</h3>
                     <p className='text-[20px]'> Cold weather can lead to frostbite and hypothermia, especially in small, short-haired, or elderly pets.</p>
                 </div>
-                <div className="text-center">
+                <div data-aos="fade-up-right" className="text-center">
                     <h3 className='text-2xl font-semibold'>Use pet clothing:</h3>
                     <p className='text-[20px]'> Sweaters or coats help short-haired dogs or small breeds retain warmth.</p>
                 </div>
-                <div className="text-center">
+                <div data-aos="fade-left" className="text-center">
                     <h3 className='text-2xl font-semibold'>Dry them off:</h3>
                     <p className='text-[20px]'> After walks, wipe paws and belly to remove snow, ice, and salt, which can irritate skin.</p>
                 </div>
-                <div className="text-center">
+                <div data-aos="flip-left" className="text-center">
                     <h3 className='text-2xl font-semibold'>Monitor food intake:</h3>
                     <p className='text-[20px]'> Pets who are more active outdoors may need extra calories, while indoor pets may need less.</p>
                 </div>
             </div>
-            <section className="bg-base-200 w-full max-w-[1500px] mx-auto p-6 sm:p-10 my-10 rounded-2xl">
+            <section data-aos="flip-down" className="bg-base-200 w-full max-w-[1500px] mx-auto p-6 sm:p-10 my-10 rounded-2xl">
                 <h1 className="animate__animated animate__fadeInDown text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-primary">
                     Meet Our Pet Care Doctors
                 </h1>
 
                 <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    <div className="card bg-base-100 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]">
+                    <div data-aos="zoom-out-right" className="card bg-base-100 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]">
                         <figure>
                             <img src={image} alt="James Herriot" className="w-full h-[280px] rounded-t-lg" />
                         </figure>
@@ -46,7 +46,7 @@ const WinterCare = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card bg-base-100 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]">
+                    <div data-aos="zoom-out-right" className="card bg-base-100 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]">
                         <figure>
                             <img src={image1} alt="Dr. Brian Murphy" className="w-full h-[280px] rounded-t-lg" />
                         </figure>
@@ -60,7 +60,7 @@ const WinterCare = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card bg-base-100 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]">
+                    <div data-aos="zoom-out-right" className="card bg-base-100 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]">
                         <figure>
                             <img src={image2} alt="Dr. Evan Antin" className="w-full h-[280px] rounded-t-lg" />
                         </figure>
@@ -74,7 +74,7 @@ const WinterCare = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card bg-base-100 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]">
+                    <div data-aos="zoom-out-right" className="card bg-base-100 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]">
                         <figure>
                             <img src={image3} alt="Dr. Mark Morris Sr" className="w-full h-[280px] rounded-t-lg" />
                         </figure>

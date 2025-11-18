@@ -6,7 +6,7 @@ const HeroCard = ({ petdatas }) => {
     const { serviceName, image, price, description, rating, serviceId } = petdatas
     // console.log(image)
     return (
-        <div className="animate__animated  hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 h-full card rounded-xl w-96 max-lg:w-full max-md:w-96 max-sm:w-72 shadow-xl bg-white text-black">
+        <div   data-aos="fade-down" className="animate__animated  hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 h-full card rounded-xl w-96 max-lg:w-full max-md:w-96 max-sm:w-72 shadow-xl bg-white text-black">
             <img className='h-[220px] rounded-t-xl' src={image} alt="dd" />
             <div className="card-body">
                 <h2 className="card-title text-xl">{serviceName}</h2>
