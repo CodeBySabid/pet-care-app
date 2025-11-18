@@ -28,7 +28,7 @@ const PetDetails = () => {
     }
     return (
         <div className='w-full flex flex-col items-center my-10 max-sm:my-5 px-5'>
-            <div className='w-[1500px]'>
+            <div className='max-w-[1500px]'>
                 <div className='flex w-full gap-7 max-sm:gap-2.5 max-md:flex-col max-md:items-center'>
                     <img className='max-lg:w-[40.5vw] rounded-xl w-[400px] h-[300px] max-lg:h-[35vw] max-md:w-[90%] max-md:h-[350px] max-sm:h-[49vw] max-sm:w-screen' src={image} alt="" />
                     <div className='w-full flex flex-col items-center gap-3 max-lg:gap-[1vw]'>

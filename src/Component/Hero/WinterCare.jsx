@@ -6,9 +6,9 @@ import image3 from '../../assets/download (8).jpg'
 
 const WinterCare = () => {
     return (
-        <div className='w-full flex flex-col items-center my-6'>
-            <h1 className="text-4xl font-bold text-center mb-9 text-primary">Winter Care Tips for Pets</h1>
-            <div className='flex flex-col gap-2 align-center'>
+        <div className='flex flex-col items-center my-6'>
+            <h1 className="animate__animated animate__fadeInDown text-4xl font-bold text-center mb-9 text-primary">Winter Care Tips for Pets</h1>
+            <div className='animate__animated animate__fadeInDown flex flex-col gap-2 align-center'>
                 <div className="text-center">
                     <h3 className='text-2xl font-semibold'>Limit outdoor time:</h3>
                     <p className='text-[20px]'> Cold weather can lead to frostbite and hypothermia, especially in small, short-haired, or elderly pets.</p>
@@ -27,7 +27,7 @@ const WinterCare = () => {
                 </div>
             </div>
             <section className="bg-base-200 w-full max-w-[1500px] mx-auto p-6 sm:p-10 my-10 rounded-2xl">
-                <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-primary">
+                <h1 className="animate__animated animate__fadeInDown text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 text-primary">
                     Meet Our Pet Care Doctors
                 </h1>
 

@@ -25,7 +25,7 @@ const Navbar = () => {
         } to={'/myprofile'}>My Profile</NavLink>
     </>
     return (
-        <div>
+        <div className='sticky top-0 z-50'>
             <nav className="bg-white w-full">
                 <div className="w-full px-4 py-3 flex items-center justify-between">
                     <NavLink className="flex text-gradient-to-r from-[#632EE3] to-[#9F62F2] items-center gap-3 max-sm:gap-2 text-2xl text-black font-bold max-sm:text-xl" to={'/'}><img className='w-14 h-11 max-sm:w-9 max-sm:h-9' src={image} /><span className='inline-block bg-clip-text'>Pet Care</span></NavLink>

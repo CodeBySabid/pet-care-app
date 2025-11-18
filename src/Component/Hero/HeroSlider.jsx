@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
+import 'animate.css';
 
 import slide1 from "../../assets/download (1).jpg";
 import slide2 from "../../assets/download (2).jpg";
@@ -12,7 +13,7 @@ import slide5 from "../../assets/download.jpg";
 const images = [slide1, slide2, slide3, slide4, slide5];
 function HeroSlider() {
   return (
-    <div className="w-full my-5 mx-auto">
+    <div className="animate__animated animate__fadeInDownBig w-full my-5 mx-auto">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
