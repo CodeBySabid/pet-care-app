@@ -87,7 +87,7 @@ const Register = () => {
                     <h1 className='text-4xl font-semibold text-center'>Register</h1>
                     <form onSubmit={handleSignup} className="fieldset">
                         <label className="label">Name</label>
-                        <input type="text" name='name' className="input" placeholder="First Name" />
+                        <input type="text" name='name' className="input" placeholder="Name" />
                         <label className="label">Email</label>
                         <input type="email" name='email' className="input" placeholder="Email" />
                         <label className="label">Photo-URL</label>

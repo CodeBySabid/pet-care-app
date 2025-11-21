@@ -41,7 +41,7 @@ const ExtraSection = () => {
         return count.toLocaleString();
     };
     return (
-        <div  data-aos="fade-down-left" className="w-full mb-3 rounded-2xl bg-linear-to-r from-[#0D7A95] to-[#22A4C4] py-14 flex flex-col items-center">
+        <div data-aos="flip-down" className="w-full mx-auto mb-3 rounded-2xl bg-linear-to-r from-[#0D7A95] to-[#22A4C4] py-14 flex flex-col items-center">
             <h2 className="text-white text-xl font-semibold mb-12 tracking-wide text-center">
                 ACHIEVED LAST YEAR, THANKS TO YOUR SUPPORT
             </h2>

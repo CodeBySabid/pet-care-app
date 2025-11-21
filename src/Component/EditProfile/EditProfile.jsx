@@ -1,43 +1,62 @@
-import React, { useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { ToastContainer } from 'react-toastify';
+import { updateProfile } from 'firebase/auth';
+import React, { use } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import { AuthContext } from '../provider/AuthContext';
+import { useNavigate } from 'react-router';
 
 const EditProfile = () => {
-    const [showPassword, setShowPassword] = useState('')
-    const [email, setEmail] = useState('')
+    const { user } = use(AuthContext)
+    const navigate = useNavigate();
+    const handleUpdateProfile = async (event) => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const photoURL = event.target.photoURL.value;
+        if (!name) {
+            toast.error("Please fill in the email field!");
+            return;
+        }
+        if (!photoURL) {
+            toast.error("Please fill in the photoURL field!");
+            return;
+        }
+
+        try {
+            await updateProfile(user, {
+                displayName: name,
+                photoURL: photoURL
+            });
+            navigate("/myprofile");
+            window.location.reload();
+        } catch (error) {
+            toast.error(error.message);
+        }
+    }
+
     return (
         <div className="hero bg-base-200 min-h-screen px-1">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
-                    <h1 className='text-center text-4xl font-semibold'>Login</h1>
-                    <form className="fieldset">
+                    <h1 className='text-center text-4xl font-semibold'>Update Profile</h1>
+                    <form onSubmit={handleUpdateProfile} className="fieldset">
                         <label className="label">Email</label>
                         <input
                             name='email'
                             type="email"
                             className="input"
                             placeholder="Email"
+                            defaultValue={user.email}
+                        />
+                        <label className="label">Name</label>
+                        <input
+                            type="text"
+                            name='name'
+                            className="input"
+                            placeholder="Name"
+                            defaultValue={user.displayName}
                             />
-                        <label className="label">Password</label>
-                        <div className="relative">
-                            <input
-                                type={showPassword ? "text" : "password"}
-                                name="password"
-                                className="input pr-0"
-                                placeholder="Password"
-                            />
-                            <span
-                                className="absolute z-10 right-7 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600"
-                                onClick={() => setShowPassword(!showPassword)}
-                            >
-                                {showPassword ? (
-                                    <FaEyeSlash size={20} />
-                                ) : (
-                                    <FaEye size={20} />
-                                )}
-                            </span>
-                        </div>
-                        <button className="btn w-[96%] btn-neutral mt-4">Login</button>
+                        <label className="label">Photo-URL</label>
+                        <input type="url" name='photoURL' className="input" placeholder="Photo-URL" />
+                        <button className="btn w-[96%] btn-neutral mt-4">Update Profile</button>
                     </form>
                 </div>
             </div>

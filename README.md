@@ -2,9 +2,7 @@ Project Name : Pet Care in Winter
 
 Purpose : Providing guidelines on how to protect pets from the cold during winter, how to keep them warm, and the appropriate amount of food and water.
 
-live URL : 
-
-key features : 
+live URL : brilliant-bavarois-0f2149.netlify.app
 
 npm packages : 
 (1) npm create vite@latest

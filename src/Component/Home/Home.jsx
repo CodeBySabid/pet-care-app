@@ -10,7 +10,7 @@ const Home = () => {
     const Petedata = petdata.slice(0, 6)
     // const Alldata = petdata;
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <HeroSlider></HeroSlider>
             <div className='w-full flex flex-col items-center'>
                 <h1 className='animate__animated animate__fadeInDown font-semibold text-[3vw] max-md:text-[4vw] max-sm:text-[5vw] my-9'>Popular Winter Care Services</h1>
